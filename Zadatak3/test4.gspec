@@ -1,0 +1,30 @@
+@objects
+	body body
+	url #URLRepozitorija
+	akademska_godina #Godina
+	branchevi #ImenovanjeBrancheva
+	posalji .posalji
+
+= Visible section =
+	url:
+		visible
+	akademska_godina:
+		visible
+	branchevi:
+		visible
+	posalji:
+		visible
+= Below section =
+	akademska_godina:
+		below url
+	branchevi:
+		below akademska_godina
+	posalji:
+		below branchevi
+= Above section =
+	url:
+		above akademska_godina
+	akademska_godina:
+		above branchevi
+	branchevi:
+		above posalji
