@@ -1,0 +1,103 @@
+body{
+background-color: lightblue;
+}
+.glavni_dio {
+    display: grid;
+   	grid-template-columns:60% 40%;
+ 	grid-template-rows: 49% 60%;
+   	background-color: lightblue;
+   	grid-template-areas:
+   	"meni meni"
+   	"studenti grupe";
+   	text-align: center;
+} 
+
+#meni {
+	grid-area:meni;
+	text-align: left;
+	margin-bottom: 1px;
+	padding: 0;
+}
+
+#meni ul{ margin:0; padding: 0; }
+#meni li{display:inline; margin:0;}
+
+
+#grupelnk{
+	padding-right: 5%;
+	padding-left: 5%;
+}
+
+#studenti{
+	grid-area:studenti;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15%,1fr));
+}
+
+#grupe{
+	grid-area:grupe;
+}
+
+#tabela, th, td{
+	border:1px solid black;
+	
+}
+#student{
+	background-color: lightgreen;
+	margin:3%;
+	height: 100%;
+}
+
+
+
+
+@media only screen and (min-width:501px) and (max-width: 799px){
+.glavni_dio{
+	display: grid;
+	height: 100vh;
+	grid-template-columns:100%;
+	grid-template-rows:50% 30% 30%;
+	background-color: lightblue;
+	grid-template-areas:
+	"meni"
+	"grupe"
+	"studenti";
+
+}
+#grupe{
+	margin-bottom: 5px;
+}
+
+}
+
+@media only screen and (max-width: 500px){
+.glavni_dio{
+	grid-template-columns:100%;
+	grid-template-rows:30% 20% 30%;
+	grid-template-areas:
+	"meni"
+	"grupe"
+	"studenti";
+}
+#grupelnk{
+	margin: 0;
+	padding: 0;
+}
+#vjezbelnk{
+	margin: 0;
+	padding: 0;
+}
+#studenti{
+	margin: 0;
+}
+#grupe{
+	margin-bottom: 1px;
+	padding-left: 45%;
+}
+#meni ul{ list-style-type: none; }
+#meni li{padding: 0; margin: 0;}
+
+th,td:not(:nth-child(1)){
+	display:none; 
+}
+
