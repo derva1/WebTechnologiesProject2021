@@ -1,0 +1,16 @@
+
+html {
+    display: table;
+    margin: auto;
+}
+body{
+	background-color: lightblue;
+	display: table-cell;
+    vertical-align: middle;
+}
+#glavnidio{
+	object-position: center;
+}
+textarea{
+	width: 100%;
+}

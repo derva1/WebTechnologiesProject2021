@@ -1,0 +1,17 @@
+h2{
+	text-align: right;
+}
+p{
+	font-weight: bold;
+}
+body{
+	background-color: lightblue;
+
+}
+#glavnidio{
+	margin-left:10%;
+	float: left;
+}
+#glavnidio2{
+	padding-left: 30%;
+}

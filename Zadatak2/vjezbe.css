@@ -1,0 +1,115 @@
+@media only screen and (min-width: 800px){
+  body{
+    background-color: lightblue;
+  }
+	.glavni_dio {
+    display: grid;
+   	height: 100vh;
+   	grid-template-columns:30% 70%;
+   	grid-template-rows: 15% 85%;
+   	grid-template-areas:
+   	"meni meni"
+   	"odabirVjezbe graf";
+   	text-align: center;
+} 
+
+#meni {
+	grid-area: meni;
+  text-align: left;
+  margin-left: 5%;
+}
+
+#odabirVjezbe{
+  grid-area:odabirVjezbe;
+  text-align: left;
+  padding: 0.5%;
+  background-color: lightgreen;
+  height: 73%;
+
+}
+
+#zadaci{
+  background-color: grey;
+  height: auto;
+  object-position: center;
+}
+.zadatak{
+  margin:1%;
+  text-align: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  position: center;
+  height: 50%;
+}
+
+.graf{
+  grid-area:graf;
+}
+
+
+#meni ul{ margin:0; padding:5px;}
+#meni li{display:inline; margin:0;}
+
+
+.vjezba{
+  width: 100%;
+  height: 10.5%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+    }
+
+.graf1 {
+  float: left;
+  width: 35.00%;
+  height: 38%;
+  padding-left: 3%
+}
+
+.graf::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+}
+
+@media only screen and (max-width: 799px){
+  body{
+    background-color: lightblue;
+  }
+.glavni_dio {
+    display: grid;
+    height: 100vh;
+    grid-template-columns:100%;
+    grid-template-rows: 100%
+    background-color: lightblue;
+    grid-template-areas:
+    "meni"
+    "odabirVjezbe"
+    "graf"
+    "graf"
+    "graf";
+    text-align: center;
+} 
+#odabirVjezbe{
+  grid-area:odabirVjezbe;
+  padding: 0.5%;
+  background-color: lightgreen;
+  height: 100%;
+
+}
+
+.vjezba{
+  width: 100%;
+
+}
+#zadaci{
+  background-color: grey;
+  height: auto;
+  object-position: center;
+}
+
+#meni{background-color: lightblue;}
+#meni ul{ margin:0; padding:5px; list-style-type: none;}
+
+}
