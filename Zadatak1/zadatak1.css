@@ -14,7 +14,6 @@ background-color: lightblue;
 
 #meni {
 	grid-area:meni;
-	text-align: left;
 	margin-bottom: 1px;
 	padding: 0;
 }
@@ -56,7 +55,7 @@ background-color: lightblue;
 	display: grid;
 	height: 100vh;
 	grid-template-columns:100%;
-	grid-template-rows:50% 30% 30%;
+	grid-template-rows:30% 30% 30%;
 	background-color: lightblue;
 	grid-template-areas:
 	"meni"
@@ -66,7 +65,9 @@ background-color: lightblue;
 }
 #grupe{
 	margin-bottom: 5px;
+
 }
+
 
 }
 
@@ -79,13 +80,16 @@ background-color: lightblue;
 	"grupe"
 	"studenti";
 }
+#meni{
+	width: 100%;
+}
 #grupelnk{
-	margin: 0;
-	padding: 0;
+	margin: auto;
+	width: 100%;
 }
 #vjezbelnk{
-	margin: 0;
-	padding: 0;
+	margin: auto;
+	width: 100%;
 }
 #studenti{
 	margin: 0;
@@ -94,8 +98,8 @@ background-color: lightblue;
 	margin-bottom: 1px;
 	padding-left: 45%;
 }
-#meni ul{ list-style-type: none; }
-#meni li{padding: 0; margin: 0;}
+#meni ul{ list-style-type: none; width: 100%; }
+#meni li{width:100%; padding: 0; margin: 0; display: block;}
 
 th,td:not(:nth-child(1)){
 	display:none; 
