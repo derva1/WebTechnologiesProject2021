@@ -54,6 +54,23 @@ var TestoviParser =(function(){
 				}
 				alert = 1
 			}
+			else if(istiNaziv==1){
+
+				for(let k = 0; k<objekat1.failures.length;k++){
+
+					if(poredbeniString==objekat1.failures[k].fullTitle){
+						var sadrziUOba=0
+						for( let z = 0; z<objekat2.failures.length;z++ ){
+							if(poredbeniString==objekat2.failures[z].fullTitle){
+								sadrziUOba=1
+							}
+						}
+						if(sadrziUOba==0){
+							padnuti.push(objekat1.failures[k].fullTitle)
+						}
+					}
+				}
+			}
 		}
 		padnuti.sort()
 		if(alert==0){
@@ -90,7 +107,14 @@ var TestoviParser =(function(){
 				"promjena": broj+ "%"
 			}
 			for(let i = 0; i < objekat2.failures.length; i++){
+				var neUbacuj = 0
 				if(padnuti.includes(objekat2.failures[i].fullTitle)==false){
+					for(let j= 0; j<objekat1.failures.length; j++){
+						if(objekat1.failures[j].fullTitle == objekat2.failures[i].fullTitle){
+							neUbacuj=1
+						}
+					}
+					if(neUbacuj==0)
 					padnutiIzDrugog.push(objekat2.failures[i].fullTitle)
 				}
 			}

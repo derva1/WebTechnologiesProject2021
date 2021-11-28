@@ -295,7 +295,7 @@ describe ('Testovi Parser', function() {
     });
  }); 
         describe ('porediRezultate - testiranje;', function() {
-        it('Novi Test 1 - testiranje poredjena oba testa ista, i oba testa su u drugom rezultatu prošla uspješno', function(){
+        it('Novi Test 1 - testiranje poredjenja oba testa ista, i oba testa su u drugom rezultatu prošla uspješno', function(){
             const test1=`
         {
           "stats": {
@@ -415,7 +415,7 @@ describe ('Testovi Parser', function() {
 
 
      });
-     it('Novi Test 2 - testiranje poredjena oba testa istih naziva, ali u rezultatu dva oba testa su u failures', function(){   
+     it('Novi Test 2 - testiranje poredjenja oba testa istih naziva, ali u rezultatu dva oba testa su u failures', function(){   
        const test1=`
         {
           "stats": {
@@ -532,7 +532,7 @@ describe ('Testovi Parser', function() {
         assert.deepEqual(JSON.stringify(TestoviParser.porediRezultate(test1,test2)),'{"promjena":"0%","greske":["Drugi test koji ne bi trebao biti tačan","Prvi test koji ne bi trebao biti tačan"]}');
         });
 
-     it('Novi Test 3 - testiranje poredjena oba testa istih naziva, ali u rezultatu dva jedan test je u failures', function(){   
+     it('Novi Test 3 - testiranje poredjenja oba testa istih naziva, ali u rezultatu dva jedan test je u failures', function(){   
        const test1=`
         {
           "stats": {
@@ -1316,7 +1316,7 @@ describe ('Testovi Parser', function() {
           
           {
             "title": "Ovo je drugi test",
-            "fullTitle": "Prviss test koji ne bi trebao biti tačan",
+            "fullTitle": "Drugi test koji ne bi trebao biti tačan",
             "file": null,
             "duration": 0,
             "currentRetry": 0,
@@ -1345,7 +1345,128 @@ describe ('Testovi Parser', function() {
           ]
           
         }`;
-        assert.deepEqual(JSON.stringify(TestoviParser.porediRezultate(test1,test2)),'{"promjena":"80%","greske":["Cetvrti test koji ne bi trebao biti tačan","Drugi test koji ne bi trebao biti tačan","Prvi test koji ne bi trebao biti tačan(razlikovanje teksta)","Sesti test koji bi trebao biti tačan"]}');
+        assert.deepEqual(JSON.stringify(TestoviParser.porediRezultate(test1,test2)),'{"promjena":"75%","greske":["Cetvrti test koji ne bi trebao biti tačan","Sesti test koji bi trebao biti tačan"]}');
         }); 
-  }); 
+ 
+
+         it('Novi Test 9 - testiranje poredjenja, identična dva testa', function(){   
+       const test1=`
+        {
+          "stats": {
+          "suites": 2,
+          "tests": 2,
+          "passes": 1,
+          "pending": 0,
+          "failures": 1,
+          "start": "2021-11-05T15:00:26.343Z",
+          "end": "2021-11-05T15:00:26.352Z",
+          "duration": 9
+          },
+          "tests": [
+          {
+            "title": "Ovo je prvi test",
+            "fullTitle": "Prvi test koji ne bi trebao biti tačan",
+            "file": null,
+            "duration": 1,
+            "currentRetry": 0,
+            "speed": "fast",
+            "err": {}
+          },
+          {
+            "title": "Ovo je drugi test",
+            "fullTitle": "Drugi test koji ne bi trebao biti tačan",
+            "file": null,
+            "duration": 0,
+            "currentRetry": 0,
+            "speed": "fast",
+            "err": {}
+          }
+          ],
+          "pending": [],
+          "failures": [
+          {
+            "title": "Ovo je drugi test",
+            "fullTitle": "Drugi test koji ne bi trebao biti tačan",
+            "file": null,
+            "duration": 0,
+            "currentRetry": 0,
+            "speed": "fast",
+            "err": {}
+          }
+          ],
+          "passes": [
+          {
+            "title": "Ovo je prvi test",
+            "fullTitle": "Prvi test koji ne bi trebao biti tačan",
+            "file": null,
+            "duration": 1,
+            "currentRetry": 0,
+            "speed": "fast",
+            "err": {}
+          }
+          ]
+          
+        }`;
+
+        const test2=`
+        {
+          "stats": {
+          "suites": 2,
+          "tests": 2,
+          "passes": 1,
+          "pending": 0,
+          "failures": 1,
+          "start": "2021-11-05T15:00:26.343Z",
+          "end": "2021-11-05T15:00:26.352Z",
+          "duration": 9
+          },
+          "tests": [
+          {
+            "title": "Ovo je prvi test",
+            "fullTitle": "Prvi test koji ne bi trebao biti tačan",
+            "file": null,
+            "duration": 1,
+            "currentRetry": 0,
+            "speed": "fast",
+            "err": {}
+          },
+          {
+            "title": "Ovo je drugi test",
+            "fullTitle": "Drugi test koji ne bi trebao biti tačan",
+            "file": null,
+            "duration": 0,
+            "currentRetry": 0,
+            "speed": "fast",
+            "err": {}
+          }
+          ],
+          "pending": [],
+          "failures": [
+
+           {
+            "title": "Ovo je drugi test",
+            "fullTitle": "Drugi test koji ne bi trebao biti tačan",
+            "file": null,
+            "duration": 0,
+            "currentRetry": 0,
+            "speed": "fast",
+            "err": {}
+          }
+          ],
+          "passes": [          
+          {
+            "title": "Ovo je prvi test",
+            "fullTitle": "Prvi test koji  bi trebao biti tačan",
+            "file": null,
+            "duration": 0,
+            "currentRetry": 0,
+            "speed": "fast",
+            "err": {}
+          }
+          ]
+          
+        }`;
+        assert.deepEqual(JSON.stringify(TestoviParser.porediRezultate(test1,test2)),'{"promjena":"50%","greske":["Drugi test koji ne bi trebao biti tačan"]}');
+        });
 }); 
+  });
