@@ -33,8 +33,20 @@ var TestoviParser =(function(){
 		return objekat
 	}
 	var porediRezultate = function(rezultat1, rezultat2){
+		try{
 		var objekat1 = JSON.parse(rezultat1)
 		var objekat2 = JSON.parse(rezultat2)
+		} catch(err){
+			var objekat = {
+				"tacnost": 0+"%",
+				"greske": []
+			}
+			let tekstoviGresaka=[]
+			tekstoviGresaka[0] = "Testovi se ne mogu izvršiti"
+			objekat["greske"]=tekstoviGresaka
+			return objekat
+		}
+		
 		var brojRazlicitihTestova = 0
 		var istiNaziv = 0
 		var alert = 0
