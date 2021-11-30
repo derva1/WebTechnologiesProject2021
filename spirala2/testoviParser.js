@@ -71,6 +71,7 @@ var TestoviParser =(function(){
 					}
 				}
 			}
+			istiNaziv=0
 		}
 		padnuti.sort()
 		if(alert==0){
@@ -80,9 +81,9 @@ var TestoviParser =(function(){
 			}
 			let tekstoviGresaka=[]
 			for(let i = 0 ; i < objekat2.failures.length; i++){
-				if(objekat1.failures.includes(objekat2.failures[i])==false){
-					tekstoviGresaka.push(objekat2.failures[i].fullTitle)
-				}
+
+				tekstoviGresaka.push(objekat2.failures[i].fullTitle)
+				
 			}
 			tekstoviGresaka.sort()
 			povratniObjekat["greske"]=tekstoviGresaka
@@ -101,22 +102,14 @@ var TestoviParser =(function(){
 				broj = broj;
 			}
 			else{
-			broj = broj.toFixed(2)
+			broj = broj.toFixed(1)
 			}
 			var povratniObjekat = {
 				"promjena": broj+ "%"
 			}
 			for(let i = 0; i < objekat2.failures.length; i++){
-				var neUbacuj = 0
-				if(padnuti.includes(objekat2.failures[i].fullTitle)==false){
-					for(let j= 0; j<objekat1.failures.length; j++){
-						if(objekat1.failures[j].fullTitle == objekat2.failures[i].fullTitle){
-							neUbacuj=1
-						}
-					}
-					if(neUbacuj==0)
 					padnutiIzDrugog.push(objekat2.failures[i].fullTitle)
-				}
+				
 			}
 			padnutiIzDrugog.sort()
 			for(let j = 0 ; j< padnutiIzDrugog.length; j++){

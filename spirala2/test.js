@@ -985,9 +985,8 @@ describe ('Testovi Parser', function() {
             "currentRetry": 0,
             "speed": "fast",
             "err": {}
-          }
-          ],
-          "passes": [{
+          },
+          {
             "title": "Ovo je drugi test",
             "fullTitle": "Drugi test koji bi trebao biti tačan",
             "file": null,
@@ -996,10 +995,11 @@ describe ('Testovi Parser', function() {
             "speed": "fast",
             "err": {}
           }
-          ]
+          ],
+          "passes": []
           
         }`;
-        assert.deepEqual(JSON.stringify(TestoviParser.porediRezultate(test1,test2)),'{"promjena":"66.67%","greske":["Drugi test koji ne bi trebao biti tačan","Prvi test koji bi trebao biti tačan"]}');
+        assert.deepEqual(JSON.stringify(TestoviParser.porediRezultate(test1,test2)),'{"promjena":"66.7%","greske":["Drugi test koji ne bi trebao biti tačan","Drugi test koji bi trebao biti tačan","Prvi test koji bi trebao biti tačan"]}');
         });
 
         it('Novi Test 7 - testiranje poredjenja, nazivi su različiti, više je testova koji padaju u oba rezultata, testiranje leksikografskog poretka', function(){   
@@ -1345,7 +1345,7 @@ describe ('Testovi Parser', function() {
           ]
           
         }`;
-        assert.deepEqual(JSON.stringify(TestoviParser.porediRezultate(test1,test2)),'{"promjena":"75%","greske":["Cetvrti test koji ne bi trebao biti tačan","Sesti test koji bi trebao biti tačan"]}');
+        assert.deepEqual(JSON.stringify(TestoviParser.porediRezultate(test1,test2)),'{"promjena":"75%","greske":["Cetvrti test koji ne bi trebao biti tačan","Drugi test koji ne bi trebao biti tačan","Sesti test koji bi trebao biti tačan"]}');
         }); 
  
 
