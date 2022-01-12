@@ -51,7 +51,7 @@ app.post('/vjezbe/', function (req, res) {
     }
     if(objekat.data.length>0) res.status(200).json(objekat);
     else{
-    let novaLinija =  + tijelo['brojVjezbi'] + ", " + tijelo['brojZadataka'];
+    let novaLinija =  tijelo['brojVjezbi'] + ", " + tijelo['brojZadataka'];
 	fs.writeFileSync('vjezbe.csv',novaLinija,'utf8');
 	res.status(200).json(tijelo);
 	}
