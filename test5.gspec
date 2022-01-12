@@ -1,0 +1,35 @@
+@objects
+	body body
+	vjezbe #vjezbe
+	zadaci #zadaci
+	verzija #verzija
+	greske #greske
+	posalji .posalji
+
+= Visible section =
+	vjezbe:
+		visible
+	zadaci:
+		visible
+	verzija:
+		visible
+	greske:
+		visible
+	posalji:
+		visible
+= Below section =
+	zadaci:
+		below vjezbe
+	verzija:
+		below zadaci
+	
+	posalji: 
+		below greske
+= Above section =
+	vjezbe:
+		above zadaci
+	zadaci:
+		above verzija
+
+	greske:
+		above posalji
