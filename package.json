@@ -1,8 +1,11 @@
 {
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.14.0"
   },
-  "name": "spirala3",
+  "name": "spirala4",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
