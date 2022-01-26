@@ -5,13 +5,18 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.14.0"
   },
-  "name": "spirala4",
+  "name": "wt21p18726",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test2.js --timeout 10000"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.0"
+  }
 }
